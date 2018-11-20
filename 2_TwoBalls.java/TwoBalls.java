@@ -32,6 +32,7 @@ public class TwoBalls {
 			
 			if (b1.intersects(b2)) {
 				gc.setBackgroundColor(Color.WHITE);
+				//exchange the x velocities to make it look like the balls bounce off of each other
 				int temp = b1.vx;
 				b1.vx = b2.vx;
 				b2.vx = temp;
@@ -68,7 +69,12 @@ public class TwoBalls {
 		
 	}
 			
+	/* 
+	This draws all of the graphics for the game.
+	Don't put any graphics drawing anywhere else (except perhaps an end screen)
+	*/
 	void drawGraphics(){
+		//this is needed to stop flickering
 		synchronized(gc){
 			gc.clear();
 			gc.setColor(b1.clr);
