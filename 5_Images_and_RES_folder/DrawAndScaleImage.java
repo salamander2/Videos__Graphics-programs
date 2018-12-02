@@ -159,11 +159,24 @@ public class DrawAndScaleImage extends JFrame{
 		return image;
 	}
 
-	/* Requires a / at the beginning of the filename */
+	
+	/* Requires a / at the beginning of the filename 
+	Note that this works with ImageIcon as well as ImageIO.read */
 	Image loadImageR2(String fn) {
+		Image image = null;
+		
+/*		//1. Using ImageIcon
 		ImageIcon icon = new ImageIcon(this.getClass().getResource(fn));
-		Image image = icon.getImage();
-		if (image == null) System.out.println("null image");
+		image = icon.getImage();
+*/		
+		//2. Using ImageIO.read
+		try {
+			image = ImageIO.read(this.getClass().getResource(fn));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		return image;
 	}
+	
 }
