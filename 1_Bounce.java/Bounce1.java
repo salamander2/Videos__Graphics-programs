@@ -4,7 +4,7 @@
    Instead, go on to the second program "TwoBalls.java" which does it correctly.
 
    I repeat DO NOT USE THIS PROGRAM as a basis for making balls move or bounce!
-   
+   This is just a nice screensaver-like animation.
 */
  
 import hsa2.GraphicsConsole;
@@ -28,11 +28,11 @@ public class Bounce1 {
 	Bounce1() {		
 		setup();
 
-    //main game loop
+    	//main game loop
 		while(true) {
 			moveAndDrawBall();
 			//checkCollision();
-			gc.sleep(5);
+			gc.sleep(5);	// set this to a lower number in order for the animation to go faster
 		}				
 	}
 
@@ -44,7 +44,7 @@ public class Bounce1 {
 
 	void moveAndDrawBall() {
 		synchronized(gc) {
-			//c.clearRect(ballx, bally, size, size);
+			//gc.clearRect(ballx, bally, size, size);
 			ballx += speedx;
 			bally += speedy;
 			gc.fillOval(ballx, bally, size, size);
