@@ -18,9 +18,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -222,18 +219,7 @@ public class AnimationGame implements ActionListener {
 		@Override
 		public void keyTyped(KeyEvent e) {} //slow!!!
 	}
-	
-	
-	
-	static BufferedImage loadImage(String filename) {
-		BufferedImage img = null;			
-		try {
-			img = ImageIO.read(new File(filename));
-		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, "An image failed to load: " + filename , "ERROR", JOptionPane.ERROR_MESSAGE);
-		}		
-		return img;
-	}
+
 }
     
 
